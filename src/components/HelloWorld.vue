@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1><a v-bind:href="link"> {{ msg }}</a></h1>
+    <button v-on:click="changeMessage">Change Message</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -34,7 +35,16 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    //msg: String,
+    link: String
+  },
+  data: function () {
+    return {msg: "Welcome to your vue.js app"};
+  },
+  methods: {
+    changeMessage: function () {
+      this.msg = "Vue is awesome";
+    }
   }
 }
 </script>
