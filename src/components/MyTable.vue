@@ -33,7 +33,7 @@
     import movies from '../assets/movies'
 
     let moviesToDisplay = 10;
-    //let data = filterTitle;
+    let data = "matrix";
     let collection = _.filter(movies, function (element) {
         return element.title.toLowerCase().indexOf(data.toLowerCase()) != -1;
     });
