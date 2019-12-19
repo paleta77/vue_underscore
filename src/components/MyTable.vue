@@ -9,7 +9,7 @@
                 <th>Genre</th>
             </tr>
             </thead>
-            <tbody v-bind:key="movie" v-for="movie in moviesJson.slice(2220,2230)">
+            <tbody v-bind:key="movie" v-for="movie in moviesJson.slice(0,moviesToDisplay)">
                 <td>{{movie.title}}</td>
                 <td>{{movie.year}}</td>
                 <td>
@@ -28,16 +28,19 @@
                 </td>
             </tbody>
         </table>
+        <button v-on:click="moviesToDisplay+=10">Load 10 more</button>
     </div>
 </template>
 
 <script>
     import movies from '../assets/movies'
+    let moviesToDisplay = 10;
 
     export default {
         name: "MyTable",
         data() {
             return {
+                moviesToDisplay,
                 moviesJson: movies,
             }
         }
