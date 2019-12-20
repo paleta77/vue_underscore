@@ -34,9 +34,14 @@
     import movies from '../assets/movies'
 
     let moviesToDisplay = 10;
-    let data = "matrix";
+    let yearFilter = '1999';
     let collection = _.filter(movies, function (element) {
-        return element.title.toLowerCase().indexOf(data.toLowerCase()) != -1;
+        return element.year.toString().toLowerCase().indexOf(yearFilter.toString().toLowerCase()) != -1;
+    });
+
+    let titleFilter = 'matrix';
+    collection = _.filter(collection, function (element) {
+        return element.title.toString().toLowerCase().indexOf(titleFilter.toString().toLowerCase()) != -1;
     });
 
     export default {
