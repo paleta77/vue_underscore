@@ -25,6 +25,7 @@
             </tbody>
         </table>
         <button v-on:click="moviesToDisplay+=10">Load 10 more</button>
+        <button v-on:click="filterCollection('shrek')">filter</button>
     </div>
 </template>
 
@@ -44,6 +45,14 @@
             filterTitle: {
                 type: String
             }
+        },
+        methods: {
+            filterCollection: function (title) {
+                this.collection = _.filter(movies, function (element) {
+                    return element.title.toLowerCase().indexOf(title.toLowerCase()) != -1;
+                });
+            },
+
         },
         data() {
             return {
