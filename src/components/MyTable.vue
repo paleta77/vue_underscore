@@ -34,15 +34,29 @@
     import movies from '../assets/movies'
 
     let moviesToDisplay = 10;
-    let yearFilter = '1999';
+    let yearFilter = '';
     let collection = _.filter(movies, function (element) {
         return element.year.toString().toLowerCase().indexOf(yearFilter.toString().toLowerCase()) != -1;
     });
 
-    let titleFilter = 'matrix';
+    let titleFilter = 'star wars';
     collection = _.filter(collection, function (element) {
         return element.title.toString().toLowerCase().indexOf(titleFilter.toString().toLowerCase()) != -1;
     });
+
+    let castFilter = '';
+    collection = _.filter(collection, function (element) {
+        for(let i = 0; i<element.cast.length; i++){
+            // eslint-disable-next-line no-console,no-unreachable
+            console.log(element.cast[i]);
+        }
+        return element.cast.toString().toLowerCase().indexOf(castFilter.toLowerCase().toLowerCase()) != -1;
+    });
+
+
+
+
+    //var x = test.filter(function (a) {return a.category.id === 1 })
 
     export default {
         name: "MyTable",
