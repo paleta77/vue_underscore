@@ -46,11 +46,12 @@
 
     let castFilter = '';
     collection = _.filter(collection, function (element) {
-        for(let i = 0; i<element.cast.length; i++){
-            // eslint-disable-next-line no-console,no-unreachable
-            console.log(element.cast[i]);
-        }
         return element.cast.toString().toLowerCase().indexOf(castFilter.toLowerCase().toLowerCase()) != -1;
+    });
+
+    let genreFilter = 'Animated';
+    collection = _.filter(collection, function (element) {
+        return element.genres.toString().toLowerCase().indexOf(genreFilter.toLowerCase().toLowerCase()) != -1;
     });
 
 
