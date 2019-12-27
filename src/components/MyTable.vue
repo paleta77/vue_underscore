@@ -36,30 +36,7 @@
     import {eventBus} from "../main";
 
     let moviesToDisplay = 10;
-    let yearFilter = '';
-    let collection = _.filter(movies, function (element) {
-        return element.year.toString().toLowerCase().indexOf(yearFilter.toString().toLowerCase()) != -1;
-    });
-
-    let titleFilter = 'star wars';
-    collection = _.filter(collection, function (element) {
-        return element.title.toString().toLowerCase().indexOf(titleFilter.toString().toLowerCase()) != -1;
-    });
-
-    let castFilter = '';
-    collection = _.filter(collection, function (element) {
-        return element.cast.toString().toLowerCase().indexOf(castFilter.toLowerCase().toLowerCase()) != -1;
-    });
-
-    let genreFilter = 'Animated';
-    collection = _.filter(collection, function (element) {
-        return element.genres.toString().toLowerCase().indexOf(genreFilter.toLowerCase().toLowerCase()) != -1;
-    });
-
-
-
-
-    //var x = test.filter(function (a) {return a.category.id === 1 })
+    let collection = movies;
 
     export default {
         name: "MyTable",
@@ -86,7 +63,7 @@
         },
         created() {
             eventBus.$on('filterEvent', (message) => {
-                this.frombrother = message;
+                this.collection = message;
             });
         }
     }
