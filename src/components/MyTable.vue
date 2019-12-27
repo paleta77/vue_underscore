@@ -1,5 +1,6 @@
 <template>
     <div>
+        {{frombrother}}
         <table id="movieTable">
             <thead>
             <tr>
@@ -32,6 +33,7 @@
 <script>
     import {_} from 'vue-underscore';
     import movies from '../assets/movies'
+    import {eventBus} from "../main";
 
     let moviesToDisplay = 10;
     let yearFilter = '';
@@ -79,7 +81,13 @@
                 collection,
                 moviesToDisplay,
                 moviesJson: movies,
+                frombrother: ""
             }
+        },
+        created() {
+            eventBus.$on('filterEvent', (message) => {
+                this.frombrother = message;
+            });
         }
     }
 </script>
