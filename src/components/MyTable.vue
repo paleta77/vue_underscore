@@ -26,7 +26,6 @@
             </tbody>
         </table>
         <button v-on:click="moviesToDisplay+=10">Load 10 more</button>
-        <button v-on:click="filterCollection('shrek')">filter</button>
     </div>
 </template>
 
