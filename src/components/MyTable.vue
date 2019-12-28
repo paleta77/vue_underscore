@@ -1,6 +1,5 @@
 <template>
     <div>
-        {{frombrother}}
         <table id="movieTable">
             <thead>
             <tr>
@@ -30,7 +29,6 @@
 </template>
 
 <script>
-    import {_} from 'vue-underscore';
     import movies from '../assets/movies'
     import {eventBus} from "../main";
 
@@ -43,14 +41,6 @@
             filterTitle: {
                 type: String
             }
-        },
-        methods: {
-            filterCollection: function (title) {
-                this.collection = _.filter(movies, function (element) {
-                    return element.title.toLowerCase().indexOf(title.toLowerCase()) != -1;
-                });
-            },
-
         },
         data() {
             return {

@@ -1,7 +1,10 @@
 <template>
     <div>
-        <input type="text" v-model="form.title"/>
-        <button type="button" @click="messageFiltering">filter123</button>
+        <input type="text" v-model="form.title" placeholder="Title"/>
+        <input type="text" v-model="form.year" placeholder="Year"/>
+        <input type="text" v-model="form.cast" placeholder="Cast"/>
+        <input type="text" v-model="form.genre" placeholder="Genre"/>
+        <button type="button" @click="messageFiltering">Filter</button>
     </div>
 
 </template>
@@ -16,13 +19,16 @@
         data() {
           return {
               form:{
-                  title: ''
+                  title: '',
+                  year: '',
+                  cast: '',
+                  genre: '',
               }
           }
         },
         methods: {
             messageFiltering() {
-                let yearFilter = '';
+                let yearFilter = this.form.year;
                 let collection = _.filter(movies, function (element) {
                     return element.year.toString().toLowerCase().indexOf(yearFilter.toString().toLowerCase()) != -1;
                 });
@@ -32,12 +38,12 @@
                     return element.title.toString().toLowerCase().indexOf(titleFilter.toString().toLowerCase()) != -1;
                 });
 
-                let castFilter = '';
+                let castFilter = this.form.cast;
                 collection = _.filter(collection, function (element) {
                     return element.cast.toString().toLowerCase().indexOf(castFilter.toLowerCase().toLowerCase()) != -1;
                 });
 
-                let genreFilter = 'horror';
+                let genreFilter = this.form.genre;
                 collection = _.filter(collection, function (element) {
                     return element.genres.toString().toLowerCase().indexOf(genreFilter.toLowerCase().toLowerCase()) != -1;
                 });
