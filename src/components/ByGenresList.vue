@@ -2,8 +2,7 @@
     <div>
         <div v-bind:key="genre" v-for="genre in genres">
             <b>{{genre}}</b>
-<!--            <p v-bind:key="movie" v-for="movie in collection.slice(0,5)">{{movie.title}}</p>-->
-            {{filterByGenre(genre).splice(0,3)}}
+            <p v-bind:key="movie" v-for="movie in filterByGenre(genre).splice(0,3)">{{movie.title}}</p>
         </div>
     </div>
 </template>
