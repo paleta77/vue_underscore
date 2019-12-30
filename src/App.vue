@@ -2,6 +2,7 @@
   <div id="app">
     <FilterForm>Filters</FilterForm>
     <MyTable>Movies</MyTable>
+    <ByActorList/>
     <ByGenresList/>
   </div>
 </template>
@@ -10,6 +11,7 @@
 import MyTable from "@/components/MyTable";
 import FilterForm from "./components/FilterForm";
 import ByGenresList from "./components/ByGenresList";
+import ByActorList from "./components/ByActorList";
 import Vue from 'vue';
 import underscore from 'vue-underscore';
 
@@ -18,6 +20,7 @@ Vue.use(underscore);
 export default {
   name: 'app',
   components: {
+    ByActorList,
     ByGenresList,
     FilterForm,
     MyTable
