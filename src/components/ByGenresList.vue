@@ -2,7 +2,8 @@
     <div>
         28795
         <div v-bind:key="actor" v-for="actor in getActors()">
-            {{actor}}
+            <b>{{actor}}</b>
+            <p v-bind:key="movieOfActor" v-for="movieOfActor in getActorMovies(actor)">{{movieOfActor.title}}</p>
         </div>
         <div v-bind:key="genre" v-for="genre in genres">
             <b>{{genre}}</b>
@@ -43,8 +44,11 @@
                 let uniqActors = _.unique(joinedActors.splice(joinedActors.length-10, joinedActors.length-1));
                 return uniqActors;
             },
-            getActorMovies(){
-
+            getActorMovies(actorName){
+                let actorMovies = _.filter(collection, function (element) {
+                    return element.cast.toString().toLowerCase().indexOf(actorName.toLowerCase().toLowerCase()) != -1;
+                });
+                return actorMovies;
             }
         }
     }
