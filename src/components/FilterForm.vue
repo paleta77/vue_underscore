@@ -4,7 +4,9 @@
         <input type="text" v-model="form.year" placeholder="Year"/>
         <input type="text" v-model="form.cast" placeholder="Cast"/>
         <input type="text" v-model="form.genre" placeholder="Genre"/>
-        <button type="button" @click="messageFiltering">Filter</button>
+        <div>
+            <button type="button" @click="messageFiltering">Filter</button>
+        </div>
     </div>
 
 </template>
@@ -17,14 +19,14 @@
     export default {
         name: "FilterForm",
         data() {
-          return {
-              form:{
-                  title: '',
-                  year: '',
-                  cast: '',
-                  genre: '',
-              }
-          }
+            return {
+                form: {
+                    title: '',
+                    year: '',
+                    cast: '',
+                    genre: '',
+                }
+            }
         },
         methods: {
             messageFiltering() {
@@ -54,5 +56,8 @@
 </script>
 
 <style scoped>
-
+    button {
+        width: 100%;
+        display: block;
+    }
 </style>

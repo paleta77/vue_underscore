@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <table id="movieTable">
+    <div id="movieTable">
+        <table>
             <thead>
             <tr>
                 <th>Title</th>
@@ -23,8 +23,13 @@
                 </p>
             </td>
             </tbody>
+            <tr>
+                <td colspan="4"><button v-on:click="moviesToDisplay+=10">Load 10 more</button></td>
+            </tr>
         </table>
-        <button v-on:click="moviesToDisplay+=10">Load 10 more</button>
+        <div>
+
+        </div>
     </div>
 </template>
 
@@ -59,5 +64,13 @@
 </script>
 
 <style scoped>
+    table {
+        margin-left:auto;
+        margin-right:auto;
+    }
 
+    button {
+        width: 100%;
+        display: block;
+    }
 </style>

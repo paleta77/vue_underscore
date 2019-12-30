@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h2>Movies by genres</h2>
         <div v-bind:key="genre" v-for="genre in genres">
             <b>{{genre}}</b>
             <p v-bind:key="movie" v-for="movie in filterByGenre(genre).splice(0,3)">{{movie.title}}</p>

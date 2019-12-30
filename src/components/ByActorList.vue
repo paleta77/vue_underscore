@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h2>Movies by actors</h2>
         <div v-bind:key="actor" v-for="actor in getActors()">
             <b>{{actor}}</b>
             <p v-bind:key="movieOfActor" v-for="movieOfActor in getActorMovies(actor)">{{movieOfActor.title}}</p>

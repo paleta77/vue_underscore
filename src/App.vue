@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <FilterForm>Filters</FilterForm>
-    <MyTable>Movies</MyTable>
-    <ByActorList/>
-    <ByGenresList/>
+    <h1>Movie database</h1>
+    <FilterForm id="filter"/>
+    <MyTable id="MyTable"/>
+    <div id="lists">
+      <ByActorList id="actorList"/>
+      <ByGenresList id="genresList"/>
+    </div>
   </div>
 </template>
 
@@ -35,7 +38,26 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  width: 50%;
-  margin: auto;
 }
+
+#filter {
+  display: inline-block;
+}
+
+  #lists {
+    display: inline-block;
+  }
+
+  #genresList {
+    float: left;
+  }
+
+  #actorList {
+    float: left;
+  }
+
+  #MyTable {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 </style>
